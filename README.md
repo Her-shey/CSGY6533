@@ -33,3 +33,5 @@ The following shows alpha compositing with 0.5 and 0.85
 Alpha value 0.5 (This is same to adding with average)
 
 ![alpha](HW1/readme/alpha85.png)
+
+Alpha value 0.85
