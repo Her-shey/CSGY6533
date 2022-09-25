@@ -121,7 +121,6 @@ public:
         Image tmp(img_F.w, img_F.h);
         int w = img_F.w, h = img_F.h;
         tmp = img_F * alpha + img_B * (1-alpha);
-
         return tmp;
 
     }
@@ -136,10 +135,6 @@ public:
 
 const Image::Rgb Image::kBlack = Image::Rgb(0);
 
-
-// [comment]
-// Save an image to PPM image file
-// [/comment]
 void savePPM(const Image &img, const char *filename)
 {
     if (img.w == 0 || img.h == 0) { fprintf(stderr, "Can't save an empty image\n"); return; }
@@ -251,15 +246,12 @@ Image readPPM(const char *filename)
     return img;
 }
 
-// [comment]
-// Simulate the bokeh effect (downalod the test images or create your own)
-// [/comment]
 int main(int argc, char **argv)
 {
     try {
         printf("Start program\n");
         Image I = readPPM("./images/Mandrill.ppm");
-        Image J = readPPM("./images/tandon_stacked_color.ppm"); //readPPM("./images/xmas.ppm");
+        Image J = readPPM("./images/tandon_stacked_color.ppm");
 
 
         Image K = I + J;
@@ -281,7 +273,7 @@ int main(int argc, char **argv)
 
 
     }
-    catch (const std::exception &e) { // catch general exception (bad_alloc mainly?)
+    catch (const std::exception &e) {
         fprintf(stderr, "Error: %s\n", e.what());
     }
 
